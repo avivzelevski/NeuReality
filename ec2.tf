@@ -82,7 +82,6 @@ resource "aws_instance" "master" {
   ami           = "ami-0f64f746a3cb9a16e"
   instance_type = "t3.micro"
   key_name = "aviv"
- # user_data = "fd50d738924f03fa08bbabe03058dcdcd20d0986"
   security_groups = [ "${aws_security_group.secure.name}" ]
   tags = {
     Name = "Master"
@@ -96,8 +95,6 @@ resource "aws_instance" "slave" {
   ami = "ami-0f64f746a3cb9a16e"
   instance_type = "t3.micro"
   key_name = "aviv"
-  #count = 2
- # user_data = "fd50d738924f03fa08bbabe03058dcdcd20d0986"
   security_groups = [ "${aws_security_group.secure.name}" ]
   tags = {
     Name = "Slave"
